@@ -20,8 +20,8 @@ set(OPENEXR_CXX_STANDARD "${tmp}" CACHE STRING "C++ standard to compile against"
 set(tmp)
 message(STATUS "Building against C++ Standard: ${OPENEXR_CXX_STANDARD}")
 
-set(OPENEXR_NAMESPACE_CUSTOM "0" CACHE STRING "Whether the namespace has been customized (so external users know)")
-set(OPENEXR_INTERNAL_IMF_NAMESPACE "Imf_${OPENEXR_VERSION_API}" CACHE STRING "Real namespace for OpenEXR that will end up in compiled symbols")
+set(OPENEXR_NAMESPACE_CUSTOM "1" CACHE STRING "Whether the namespace has been customized (so external users know)")
+set(OPENEXR_INTERNAL_IMF_NAMESPACE "Imf_${OPENEXR_VERSION_API}_sidefx" CACHE STRING "Real namespace for OpenEXR that will end up in compiled symbols")
 set(OPENEXR_IMF_NAMESPACE "Imf" CACHE STRING "Public namespace alias for OpenEXR")
 set(OPENEXR_PACKAGE_NAME "OpenEXR ${OPENEXR_VERSION}${OPENEXR_VERSION_RELEASE_TYPE}" CACHE STRING "Public string / label for displaying package")
 
