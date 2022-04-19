@@ -112,8 +112,13 @@ function(OPENEXR_DEFINE_LIBRARY libname)
       VERSION ${OPENEXR_LIB_VERSION}
     )
   endif()
+
+  set(OPENEXR_LIB_PREFIX)
+  if(WIN32 AND NOT BUILD_SHARED_LIBS)
+      set(OPENEXR_LIB_PREFIX "lib")
+  endif()
   set_target_properties(${libname} PROPERTIES
-      OUTPUT_NAME "${libname}${OPENEXR_LIB_SUFFIX}"
+      OUTPUT_NAME "${OPENEXR_LIB_PREFIX}${libname}${OPENEXR_LIB_SUFFIX}"
       RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
   )
 
