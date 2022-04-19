@@ -123,7 +123,7 @@ endif()
 
 # Suffix to append to root name, this helps with version management
 # but can be turned off if you don't care, or otherwise customized
-set(OPENEXR_LIB_SUFFIX "-${OPENEXR_VERSION_API}" CACHE STRING "string added to the end of all the libraries")
+set(OPENEXR_LIB_SUFFIX "_sidefx" CACHE STRING "string added to the end of all the libraries")
 # when building both dynamic and static, the additional string to
 # add to the library name, such that to get static linkage, you
 # would use -lOpenEXR_static (or target_link_libraries(xxx OpenEXR::OpenEXR_static))
