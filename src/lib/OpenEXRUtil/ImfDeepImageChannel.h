@@ -41,7 +41,7 @@ class SampleCountChannel;
 // of the level.
 //
 
-class IMFUTIL_EXPORT_TYPE DeepImageChannel : public ImageChannel
+class IMFUTIL_EXPORT DeepImageChannel : public ImageChannel
 {
 public:
     //
@@ -56,21 +56,21 @@ public:
     // Access to the image level to which this channel belongs.
     //
 
-    IMFUTIL_EXPORT DeepImageLevel&       deepLevel ();
-    IMFUTIL_EXPORT const DeepImageLevel& deepLevel () const;
+    DeepImageLevel&       deepLevel ();
+    const DeepImageLevel& deepLevel () const;
 
     //
     // Access to the sample count channel for this deep channel.
     //
 
-    IMFUTIL_EXPORT SampleCountChannel&       sampleCounts ();
-    IMFUTIL_EXPORT const SampleCountChannel& sampleCounts () const;
+    SampleCountChannel&       sampleCounts ();
+    const SampleCountChannel& sampleCounts () const;
 
 protected:
     friend class DeepImageLevel;
 
-    IMFUTIL_EXPORT DeepImageChannel (DeepImageLevel& level, bool pLinear);
-    IMFUTIL_EXPORT virtual ~DeepImageChannel ();
+    DeepImageChannel (DeepImageLevel& level, bool pLinear);
+    virtual ~DeepImageChannel ();
 
     DeepImageChannel (const DeepImageChannel& other)            = delete;
     DeepImageChannel& operator= (const DeepImageChannel& other) = delete;
@@ -93,7 +93,7 @@ protected:
 
     virtual void initializeSampleLists () = 0;
 
-    IMFUTIL_EXPORT virtual void resize ();
+    virtual void resize ();
 
     virtual void resetBasePointer () = 0;
 };
