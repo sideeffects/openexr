@@ -14,6 +14,7 @@ find_package(pybind11 CONFIG REQUIRED)
 
 Python3_add_library (PyOpenEXR MODULE WITH_SOABI PyOpenEXR.cpp PyOpenEXR_old.cpp)
 target_link_libraries (PyOpenEXR PRIVATE ${Python3_LIBRARIES} OpenEXR::OpenEXR pybind11::headers)
+target_compile_definitions(PyOpenEXR PRIVATE $<$<CONFIG:Debug>:Py_DEBUG>)
 
 # The python module should be called "OpenEXR.x", not "PyOpenEXR.x".
 
